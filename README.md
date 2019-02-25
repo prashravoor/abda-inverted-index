@@ -2,7 +2,7 @@
 
 ## Cluster Configuration
 Create a user called "hadoopusr" or similar, on all nodes which are to be part of the cluster. **ALL HADOOP OPERATIONS ARE PERFORMED THROUGH THIS USER** <br>
-As the newly created hadoopusr, setup the node for pseudo-distributed mode as hown in the link from the (apache site)[https://hadoop.apache.org/docs/r2.9.2/hadoop-project-dist/hadoop-common/SingleCluster.html]. Repeat for all nodes which will form the cluster <br>
+As the newly created hadoopusr, setup the node for pseudo-distributed mode as hown in the link from the apache [site](https://hadoop.apache.org/docs/r2.9.2/hadoop-project-dist/hadoop-common/SingleCluster.html). Repeat for all nodes which will form the cluster <br>
 Once the setup is complete, identify one of the nodes to be a master. The remaining nodes are slaves <br>
 Add the master's public key to all the slave nodes through the following commands: <br>
 On Master:
@@ -47,7 +47,7 @@ Some utility scripts are included in the `scripts` folder to start and stop the 
 On the master node, execute the `start-all.sh` script included in the repo to start the Cluster. `stop-all.sh` will stop the cluster. <br>
 
 If needed, additionally run the following command on each slave node to start the history server: <br>
-`mr-mapreddaemon.sh --config $HADOOP_HOME/etc/hadoop start historyserver` <br>
+`mr-jobhistory-daemon.sh --config $HADOOP_HOME/etc/hadoop start historyserver` <br>
 
 ## Compiling the code
 The code can be compiled into a jar using the following commands:
